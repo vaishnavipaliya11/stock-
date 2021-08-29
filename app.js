@@ -16,23 +16,25 @@ function checkBtnHandler(e){
         Qty = Number(Qty);
         SP = Number(SP);
         if(CP>0 && Qty>0 && SP>0){
-            //loss
+
             if(CP>SP){
                 const loss = ((CP-SP)*Qty).toFixed(2);
                 const lossInPer=(((CP-SP)*100)/CP).toFixed(2) ;
-                output.innerHTML= "You lost" +lossInPer+ "% Your total loss is " +loss+ "."
+                // output.innerHTML= "You lost" +lossInPer+ "% Your total loss is " +loss+ "."
+                output.innerHTML =`you lost ${lossInPer}% and your total loss is ${loss}.`
 
                 if(lossInPer>50){
 
-                    container.classList.add("sadTheme");
+                container.classList.add("sadTheme");
                 }
 
             }
-            // Profit
+
             else{
                 const profit = ((SP-CP)*Qty).toFixed(2)
                 const profitInPer=(((SP-CP)*100)/CP).toFixed(2) ;
-                output.innerHTML=  "You gained" +profitInPer+ "% Your total profit is " +profit+ "."
+
+                output.innerHTML =`you gained ${profitInPer} and your total profit is ${profitInPer}.`
 
                 if(profitInPer>50){
 
@@ -40,11 +42,11 @@ function checkBtnHandler(e){
                 }
             }
         }else{
-            //error
-            output.innerHTML=`Please enter values greater than 0 (only numbers are allowed in above fields)`
+
+            output.innerText="Please enter values greater than 0 (only numbers are allowed in above fields)"
         }
     }else{
-        //error
-        output.innerHTML="Please enter values greater than 0 (only numbers are allowed in above fields)"
+
+        output.innerText="Please enter values greater than 0 (only numbers are allowed in above fields)"
     }
 }
