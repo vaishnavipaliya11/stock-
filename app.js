@@ -21,12 +21,7 @@ function checkBtnHandler(e){
                 const loss = ((CP-SP)*Qty).toFixed(2);
                 const lossInPer=(((CP-SP)*100)/CP).toFixed(2) ;
                 // output.innerHTML= "You lost" +lossInPer+ "% Your total loss is " +loss+ "."
-                output.innerHTML =`you lost ${lossInPer}% and your total loss is ${loss}.`
-
-                if(lossInPer>50){
-
-                container.classList.add("sadTheme");
-                }
+                output.innerHTML =`you lost ${loss} and your total loss is ${lossInPer}%.`
 
             }
 
@@ -34,12 +29,7 @@ function checkBtnHandler(e){
                 const profit = ((SP-CP)*Qty).toFixed(2)
                 const profitInPer=(((SP-CP)*100)/CP).toFixed(2) ;
 
-                output.innerHTML =`you gained ${profitInPer} and your total profit is ${profitInPer}.`
-
-                if(profitInPer>50){
-
-                container.classList.add("happyTheme");
-                }
+                output.innerHTML =`you gained ${profit} and your total profit is ${profitInPer}%.`
             }
         }else{
 
