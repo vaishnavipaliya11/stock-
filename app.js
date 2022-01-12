@@ -1,11 +1,12 @@
-var inputs = document.querySelectorAll(".input");
-var output = document.querySelector(".output");
-var container = document.querySelector(".container");
+const inputs = document.querySelectorAll(".input");
+const output = document.querySelector(".output");
+const container = document.querySelector(".container");
 const form = document.forms[0];
 
-form.addEventListener("submit", checkBtnHandler);
 
-function checkBtnHandler(e){
+
+const checkBtnHandler=(e)=>{
+    console.log("camehere");
     e.preventDefault();
 
     let CP = inputs[0].value;
@@ -20,7 +21,6 @@ function checkBtnHandler(e){
             if(CP>SP){
                 const loss = ((CP-SP)*Qty).toFixed(2);
                 const lossInPer=(((CP-SP)*100)/CP).toFixed(2) ;
-                // output.innerHTML= "You lost" +lossInPer+ "% Your total loss is " +loss+ "."
                 output.innerHTML =`you lost ${loss} and your total loss is ${lossInPer}%.`
 
             }
@@ -40,3 +40,4 @@ function checkBtnHandler(e){
         output.innerText="Please enter values greater than 0 (only numbers are allowed in above fields)"
     }
 }
+form.addEventListener("submit", checkBtnHandler);
